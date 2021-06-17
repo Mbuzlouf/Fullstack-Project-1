@@ -53,9 +53,8 @@ classes
 /*----------------------------------------------*/
 header {
   border-bottom: 1px solid #f0eff4;
-  margin-top: 1.5%;
-  margin-left: 15%;
-  margin-right: 15%;
+  display: flex;
+  flex-direction: column;
 }
 header .container {
   display: flex;
@@ -63,6 +62,8 @@ header .container {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+
+  padding: 20px 70px;
 }
 header li {
   display: inline;
@@ -85,21 +86,23 @@ header li a {
 }
 .hero__image {
   float: right;
-  margin-right: 15%;
 }
-.hero__desc {
-  margin-left: 15%;
+.hero__image img {
+  width: 90%;
 }
-
 .hero__desc a {
   text-decoration: none;
   color: white;
   background-color: #313fc4;
 }
+/* .hero__desc {
+  width: 10%;
+} */
 .hero__desc h1 {
-  font-size: 55px;
+  font-size: 3vw;
   color: #2a292e;
   width: 430px;
+  text-transform: capitalize;
 }
 .hero__desc p {
   font-size: 20px;
@@ -108,10 +111,12 @@ header li a {
   line-height: 35px;
 }
 .hero .container {
+  margin-right: auto;
+  margin-left: auto;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
 }
 .hero .button {
@@ -123,6 +128,7 @@ header li a {
   border: none;
   font-size: 20px;
   font-weight: bold;
+  padding: 10px 30px;
 }
 /*----------------------٧-----------------------*/
 /*              MEET YOUR MATCH                 */
@@ -131,10 +137,9 @@ header li a {
   background-color: #eef0fc;
   margin-left: 15%;
   margin-right: 15%;
-  margin-top: 140px;
+  margin-top: 200px;
   border-radius: 18px;
   height: 510px;
-  margin-bottom: 330px;
   box-shadow: 0px 200px 100px rgba(49, 64, 196, 0.03);
 }
 .meetYourMatch h2 {
@@ -164,10 +169,16 @@ header li a {
   padding-bottom: 30px;
   position: relative;
 }
+.form-group > input {
+  background-image: url(../images/map-pin.png);
+  background-repeat: no-repeat;
+  background-position-y: 50%;
+  background-position-x: 5%;
+}
 .form-group input[type="text"] {
   border-radius: 50px;
   height: 60px;
-  width: 420px;
+  width: 45%;
   border: 1px solid #313fc4;
   position: relative;
   z-index: 1;
@@ -180,8 +191,7 @@ header li a {
   color: #313fc4;
   font-weight: lighter;
   opacity: 0.5;
-  font-size: 18px;
-
+  font-size: medium;
   width: 100px;
 }
 
@@ -198,38 +208,28 @@ header li a {
   text-transform: capitalize;
   right: 60px;
 }
-.widgets {
+.meetYourMatch .widgets {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-.widget {
-  padding: 30px;
+.meetYourMatch .widget {
+  padding: 20px;
 }
-.widget__image {
-}
+
 .widget__desc {
   background-color: white;
-  padding: 2px 16px;
-  line-height: 8px;
+  padding: 5px;
+  line-height: unset;
 }
-.map-pin {
-  position: absolute;
-  z-index: 3;
-  left: 390px;
-  top: 48px;
-  width: 28px;
-  height: 28px;
-  background-image: url(../images/map-pin.png);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-}
+
 /*               HOW IT WORKS                   */
 /*----------------------------------------------*/
 .howItWorks {
   text-align: center;
+  margin-top: 300px;
 }
 .howItWorks h2 {
   font-size: 35px;
@@ -258,39 +258,59 @@ header li a {
 /*                 STORIES                      */
 /*----------------------------------------------*/
 .stories {
-  width: 100%;
-  background-color: #f7f6fb;
+  padding: 60px 0px;
+  margin-top: 200px;
 }
+.stories .widgets {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-top: 60px;
+  width: 80%;
+}
+.stories .container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
 .stories h2 {
   text-align: center;
   color: #29282d;
   font-size: 35px;
-  padding-top: 80px;
 }
 .stories h3 {
   font-weight: lighter;
   font-size: 20px;
 }
-.stories p {
-  text-align: center;
-  color: #807f87;
-  font-size: 17px;
-  padding-bottom: 23px;
-}
-.stories .widget__desc {
-  background-color: transparent;
-  padding: 0px 0px;
-  line-height: 8px;
-}
-.stories .widget {
-  padding: 8px;
-  padding-bottom: 125px;
-}
+
 .stories a {
   text-decoration: none;
   color: #313fc4;
   font-weight: bold;
   font-size: 14px;
+}
+.stories .widget img {
+  width: 300px;
+  height: 200px;
+}
+.link {
+  cursor: pointer;
+}
+.stories .widget__desc p {
+  width: 300px;
+  /* display: none; */
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.heading-paragraph {
+  text-align: center;
+  width: 35%;
+  color: #bdbdcb;
 }
 /*----------------------١٠----------------------*/
 /*       Actions: Change A Life, Adopt A Pet    */
@@ -301,45 +321,51 @@ header li a {
 .actions .container {
   background-color: #313fc4;
   margin-top: 0;
-  height: 370px;
+  height: 330px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .actions h2 {
   text-align: center;
   color: white;
   font-size: 35px;
   margin: 0;
-  padding: 0;
-  padding-top: 115px;
+  padding: 20px;
 }
-.actions button {
+.ActionsBtns {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.actions .is-secondary {
   text-align: center;
-  color: white;
+  color: #313fc4;
   background-color: white;
-  height: 64px;
+  padding: 12px 50px;
   border-radius: 50px;
-  width: 230px;
   border: none;
   font-size: 20px;
   font-weight: bold;
-  margin: 10px;
-  margin-top: 30px;
-}
-.actions button a {
   text-decoration: none;
-  color: #313fc4;
-  font-weight: bold;
 }
+
 .actions .is-outline {
   background-color: #313fc4;
-  border: 1px solid white;
+  border: 2px white solid;
+  border-radius: 50px;
   width: 200px;
   font-weight: bold;
-}
-.actions .is-outline a {
+  text-align: center;
   color: white;
-  font-size: 18px;
-  font-weight: bold;
-  font-weight: bold;
+  padding: 10px 54px;
+  font-size: 20px;
+  text-decoration: none;
+}
+.actions a {
+  margin: 10px;
 }
 .actions h2 {
   text-align: center;
@@ -349,7 +375,7 @@ header li a {
 /*                    FOOTER                    */
 /*----------------------------------------------*/
 .copyrights {
-  margin-left: 15%;
+  margin-left: unset;
 }
 footer ul,
 h5 {
@@ -370,54 +396,51 @@ footer h5 {
 }
 footer .container {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   margin-top: 150px;
   margin-bottom: 150px;
 }
 footer .footer-nav {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
   align-items: stretch;
-  margin-right: 15%;
 }
 footer a {
   text-decoration: none;
   color: #2a292e;
-}
-footer .iteam {
 }
 
 /*----------------------١٢----------------------*/
 /*                    Responsive                */
 /*       كل ما هو متعلق بالهواتف والتابلت       */
 /*----------------------------------------------*/
-@media only screen and (max-width: 1727px) {
+@media only screen and (max-width: 768px) {
   /* tablet */
   /* header */
   header {
     border-bottom: 1px solid #f0eff4;
     margin-top: 1.5%;
-    margin-left: 0;
-    margin-right: 0;
+    width: 100vw;
   }
   header .container {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    padding: 20px 10px;
   }
   header li {
     display: inline;
-    font-size: 20px;
-    padding: 20px;
+    font-size: 3.1vw;
+    padding: 5px;
   }
-
+  header ul {
+    padding: 0;
+  }
   header li a {
     text-decoration: none;
     color: black;
@@ -430,13 +453,7 @@ footer .iteam {
   .hero {
     margin-top: 90px;
   }
-  .hero__image {
-    float: right;
-    margin-right: 0;
-  }
-  .hero__desc {
-    margin-left: 6%;
-  }
+
   .hero img {
     width: 350px;
   }
@@ -463,7 +480,7 @@ footer .iteam {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
   }
   .hero .button {
@@ -485,7 +502,7 @@ footer .iteam {
     margin-top: 100px;
     border-radius: 18px;
     height: 360px;
-    margin-bottom: 800px;
+    margin-bottom: 400px;
     box-shadow: 0px 400px 100px rgba(49, 64, 196, 0.03);
   }
   .meetYourMatch h2 {
@@ -518,7 +535,6 @@ footer .iteam {
   .form-group input[type="text"] {
     border-radius: 50px;
     height: 60px;
-    width: 400px;
     border: 1px solid #313fc4;
     position: relative;
     z-index: 1;
@@ -531,7 +547,6 @@ footer .iteam {
     color: #313fc4;
     font-weight: lighter;
     opacity: 0.5;
-    font-size: 18px;
 
     width: 100px;
   }
@@ -539,7 +554,7 @@ footer .iteam {
   .form-group button {
     height: 64px;
     border-radius: 50px;
-    width: 150px;
+    width: 30%;
     position: relative;
     z-index: 2;
     color: white;
@@ -557,27 +572,15 @@ footer .iteam {
     align-items: center;
   }
   .widget {
-    padding: 30px;
+    padding: 10px;
     padding-top: 10px;
   }
-  .widget__image {
-  }
+
   .widget__desc {
     background-color: white;
     padding: 2px 16px;
-    line-height: 8px;
   }
-  .map-pin {
-    position: absolute;
-    z-index: 3;
-    left: 110px;
-    top: 48px;
-    width: 28px;
-    height: 28px;
-    background-image: url(../images/map-pin.png);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-  }
+
   /* --- */
   /* how it works */
   .howItWorks {
@@ -628,12 +631,11 @@ footer .iteam {
     text-align: center;
     color: #807f87;
     font-size: 17px;
-    padding-bottom: 23px;
+    padding-bottom: unset;
   }
   .stories .widget__desc {
     background-color: transparent;
     padding: 0px 0px;
-    line-height: 8px;
   }
   .stories .widget {
     padding: 30px;
@@ -653,8 +655,8 @@ footer .iteam {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: center;
   }
   .stories .widget {
     padding: 40px;
@@ -674,10 +676,10 @@ footer .iteam {
   .actions h2 {
     text-align: center;
     color: white;
-    font-size: 35px;
+    font-size: 7vw;
     margin: 0;
     padding: 0;
-    padding-top: 70px;
+    padding-top: 0;
   }
   .actions button {
     text-align: center;
@@ -692,6 +694,15 @@ footer .iteam {
     margin: 10px;
     margin-top: 30px;
   }
+  .actions .container div {
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
   .actions button a {
     text-decoration: none;
     color: #313fc4;
@@ -700,10 +711,16 @@ footer .iteam {
   .actions .is-outline {
     background-color: #313fc4;
     border: 1px solid white;
-    width: 200px;
+    width: unset;
     font-weight: bold;
+    margin: 10px;
+    padding: 10px 20px;
   }
-  .actions .is-outline a {
+  .actions .is-secondary {
+    margin: 10px;
+    padding: 10px 20px;
+  }
+  .actions .is-outline {
     color: white;
     font-size: 18px;
     font-weight: bold;
@@ -755,8 +772,6 @@ footer .iteam {
   footer a {
     text-decoration: none;
     color: #2a292e;
-  }
-  footer .iteam {
   }
 
   /* --- */
@@ -856,7 +871,7 @@ footer .iteam {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     margin-bottom: 0;
     padding-bottom: 0;
@@ -881,7 +896,7 @@ footer .iteam {
     border-radius: 0px;
     height: 530px;
     width: 150%;
-    margin-bottom: 500%;
+    margin-bottom: 150%;
     box-shadow: 0px 400px 1000px rgba(49, 64, 196, 0.03);
   }
   .meetYourMatch h2 {
@@ -915,7 +930,6 @@ footer .iteam {
   .form-group input[type="text"] {
     border-radius: 50px;
     height: 60px;
-    width: 300px;
     border: 1px solid #313fc4;
     position: relative;
     z-index: 1;
@@ -928,7 +942,6 @@ footer .iteam {
     color: #313fc4;
     font-weight: lighter;
     opacity: 0.5;
-    font-size: 18px;
 
     width: 100px;
   }
@@ -964,19 +977,8 @@ footer .iteam {
   .widget__desc {
     background-color: white;
     padding: 2px 16px;
-    line-height: 8px;
   }
-  .map-pin {
-    position: absolute;
-    z-index: 3;
-    left: 105px;
-    top: 48px;
-    width: 28px;
-    height: 28px;
-    background-image: url(../images/map-pin.png);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-  }
+
   /* --- */
   /* how it works */
   .howItWorks {
@@ -1033,12 +1035,11 @@ footer .iteam {
     text-align: center;
     color: #807f87;
     font-size: 17px;
-    padding-bottom: 23px;
+    padding-bottom: unset;
   }
   .stories .widget__desc {
     background-color: transparent;
     padding: 0px 0px;
-    line-height: 8px;
   }
   .stories .widget {
     padding: 30px;
@@ -1086,7 +1087,7 @@ footer .iteam {
     font-size: 35px;
     margin: 0;
     padding: 0;
-    padding-top: 70px;
+    padding-top: 0;
   }
   .actions button {
     text-align: center;
@@ -1109,7 +1110,7 @@ footer .iteam {
   .actions .is-outline {
     background-color: #313fc4;
     border: 1px solid white;
-    width: 200px;
+    width: unset;
     font-weight: bold;
   }
   .actions .is-outline a {
@@ -1129,8 +1130,7 @@ footer .iteam {
   .copyrights img {
     width: 145px;
   }
-  .copyrights {
-  }
+
   footer ul,
   h5 {
     list-style-type: none;
@@ -1182,4 +1182,7 @@ footer .iteam {
   }
   /* --- */
   /* ---- */
+}
+#more {
+  display: none;
 }

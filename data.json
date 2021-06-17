@@ -1,0 +1,39 @@
+{
+  "array": [
+    {
+      "name": "Rocco",
+      "gender": "Male",
+      "age": "Young",
+      "Location": "Al-Jahra'",
+      "image": "./images/pet-01.png"
+    },
+    {
+      "name": "Chanona",
+      "gender": "Female",
+      "age": "Young",
+      "Location": "Mishref",
+      "image": "./images/pet-02.png"
+    },
+    {
+      "name": "Mario",
+      "gender": "Male",
+      "age": "Old",
+      "Location": "Salwa",
+      "image": "./images/pet-03.png"
+    },
+    {
+      "name": "NotMario",
+      "gender": "Male",
+      "age": "Old",
+      "Location": "Salwa",
+      "image": "./images/pet-03.png"
+    },
+    {
+      "name": "Danio",
+      "gender": "Female",
+      "age": "Young",
+      "Location": "Qadsiya",
+      "image": "./images/pet-04.png"
+    }
+  ]
+}
